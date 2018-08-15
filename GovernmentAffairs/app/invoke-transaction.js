@@ -171,7 +171,10 @@ var invokeChaincode = async function(peerNames, channelName, chaincodeName, fcn,
 	} else {
 		let message = util.format('Failed to invoke chaincode. cause:%s',error_message);
 		logger.error(message);
-		throw new Error(message);
+        logger.error("0");
+        logger.error(proposalResponses[0]);
+		//throw new Error(message);
+        return proposalResponses[0].details;
 	}
 };
 
